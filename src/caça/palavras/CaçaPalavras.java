@@ -7,6 +7,9 @@ package caça.palavras;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -34,36 +37,44 @@ public class CaçaPalavras {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<String> palavras = new ArrayList<String>();
+//        ArrayList<String> palavras = new ArrayList<String>();
+//
+//        palavras.add("pao");
+//        System.out.print("Adicionando a palavra pao: ");
+//        System.out.println(Arrays.toString(palavras.toArray()));
+//        palavras.add("leite");
+//        System.out.print("Adicionando a palavra leite: ");
+//        System.out.println(Arrays.toString(palavras.toArray()));
+//        palavras.add("ovo");
+//        System.out.print("Adicionando a palavra ovo: ");
+//        System.out.println(Arrays.toString(palavras.toArray()));
+//
+//        System.out.print("Quem está na índice 0: ");
+//        System.out.println(palavras.get(0));
+//
+//        System.out.print("Número de elementos na lista: ");
+//        System.out.println(palavras.size());
+//
+//        System.out.print("Removendo o pao: ");
+//        palavras.remove("pao");
+//        System.out.println(Arrays.toString(palavras.toArray()));
+//
+//        System.out.print("Removendo tudo: ");
+//        palavras.clear();
+//        System.out.println(Arrays.toString(palavras.toArray()));
 
-        palavras.add("pao");
-        System.out.print("Adicionando a palavra pao: ");
-        System.out.println(Arrays.toString(palavras.toArray()));
-        palavras.add("leite");
-        System.out.print("Adicionando a palavra leite: ");
-        System.out.println(Arrays.toString(palavras.toArray()));
-        palavras.add("ovo");
-        System.out.print("Adicionando a palavra ovo: ");
-        System.out.println(Arrays.toString(palavras.toArray()));
+        String[] colunas = new String[]{"Nome", "Idade", "Sexo"};
 
-        System.out.print("Quem está na índice 0: ");
-        System.out.println(palavras.get(0));
+        String[][] dados = new String[][]{
+            {"Rodrigo", "28", "Masculino"},
+            {"Maria", "30", "Feminino"}
+        };
 
-        System.out.print("Número de elementos na lista: ");
-        System.out.println(palavras.size());
+        JTable tabela = new JTable(dados, colunas);
+        JScrollPane scroll = new JScrollPane();
+        scroll.setViewportView(tabela);
 
-        System.out.print("Removendo o pao: ");
-        palavras.remove("pao");
-        System.out.println(Arrays.toString(palavras.toArray()));
-
-        System.out.print("Removendo tudo: ");
-        palavras.clear();
-        System.out.println(Arrays.toString(palavras.toArray()));
-        
-        
-        
-        
-        
+        System.out.println(tabela);
+//        this.add(scroll);
     }
-
 }
